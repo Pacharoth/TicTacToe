@@ -81,7 +81,8 @@ class UI{
         div.classList.add('d-flex','align-items-center','mt-2','ms-2','justify-content-between');
         div.id="header";
         let divGame = document.createElement('div');
-        divGame.classList.add('d-flex','flex-wrap','justify-content-center');
+        divGame.classList.add('d-flex','m-auto','flex-wrap','justify-content-center');
+        divGame.style.cssText="width:600px";
         div.innerHTML= this.getScoreUI();
         let buttonBack = document.createElement('button');
         buttonBack.classList.add('btn','btn-primary','me-2');
@@ -93,14 +94,12 @@ class UI{
         }else if(status==1){
             div.innerHTML=this.getGenerationUI();
         }
-        for (let index = 0; index < 1500; index++) {
-            if(document.body.clientHeight<window.innerHeight){
-                let button = document.createElement('button');
-                button.classList.add("border", "btn" ,"m-1" ,"d-flex", "justify-content-center", "align-items-center" ,"shadow" ,"rounded");
-                button.style.cssText="background-color: gray; height: 30px; width: 30px;";
-                button.id=index;
-                divGame.append(button);
-            }
+        for (let index = 0; index < 144; index++) {
+            let button = document.createElement('button');
+            button.classList.add("border", "btn" ,"m-1" ,"d-flex", "justify-content-center", "align-items-center" ,"shadow" ,"rounded");
+            button.style.cssText="background-color: gray; height: 40px; width: 40px;";
+            button.id=index;
+            divGame.append(button);
         }
         document.body.append(div,divGame);
 
